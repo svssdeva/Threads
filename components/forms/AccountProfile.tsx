@@ -1,16 +1,15 @@
 "use client"
 
-import {Textarea} from "@/components/ui/textarea";
-import {useForm} from "react-hook-form";
-import {zodResolver} from "@hookform/resolvers/zod";
-import {UserValidation} from "@/lib/validations/user";
-import * as z from "zod"
-
 import {Button} from "@/components/ui/button"
 import {Form, FormControl, FormField, FormItem, FormLabel,} from "@/components/ui/form"
 import {Input} from "@/components/ui/input"
+import {Textarea} from "@/components/ui/textarea";
+import {UserValidation} from "@/lib/validations/user";
+import {zodResolver} from "@hookform/resolvers/zod";
 import Image from "next/image";
 import {ChangeEvent} from "react";
+import {useForm} from "react-hook-form";
+import * as z from "zod"
 
 interface Props {
     user: {
@@ -85,7 +84,7 @@ const AccountProfile = ({user, btnTitle}: Props) => {
                                     />
                                 )}
                             </FormLabel>
-                            <FormControl className="flex-1 text-base-semibold text-gray-200">
+                            <FormControl className="flex-1 text-gray-200 text-base-semibold">
                                 <Input
                                     type='file'
                                     accept='image/*'
@@ -101,11 +100,11 @@ const AccountProfile = ({user, btnTitle}: Props) => {
                     control={form.control}
                     name="name"
                     render={({field}) => (
-                        <FormItem className="flex items-center gap-3 w-full">
+                        <FormItem className="flex w-full items-center gap-3">
                             <FormLabel className="text-base-semibold text-light-2">
                                 Name
                             </FormLabel>
-                            <FormControl className="flex-1 text-base-semibold text-gray-200">
+                            <FormControl className="flex-1 text-gray-200 text-base-semibold">
                                 <Input className="account-form_image no-focus" type="text" {...field}/>
                             </FormControl>
                         </FormItem>
@@ -115,11 +114,11 @@ const AccountProfile = ({user, btnTitle}: Props) => {
                     control={form.control}
                     name="username"
                     render={({field}) => (
-                        <FormItem className="flex items-center gap-3 w-full">
+                        <FormItem className="flex w-full items-center gap-3">
                             <FormLabel className="text-base-semibold text-light-2">
                                 Username
                             </FormLabel>
-                            <FormControl className="flex-1 text-base-semibold text-gray-200">
+                            <FormControl className="flex-1 text-gray-200 text-base-semibold">
                                 <Input className="account-form_image no-focus" type="text" {...field}/>
                             </FormControl>
                         </FormItem>
@@ -129,11 +128,11 @@ const AccountProfile = ({user, btnTitle}: Props) => {
                     control={form.control}
                     name="bio"
                     render={({field}) => (
-                        <FormItem className="flex items-center gap-3 w-full">
+                        <FormItem className="flex w-full items-center gap-3">
                             <FormLabel className="text-base-semibold text-light-2">
                                 Bio
                             </FormLabel>
-                            <FormControl className="flex-1 text-base-semibold text-gray-200">
+                            <FormControl className="flex-1 text-gray-200 text-base-semibold">
                                 <Textarea className="account-form_image no-focus" rows={10} {...field}/>
                             </FormControl>
                         </FormItem>
